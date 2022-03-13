@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from .models import FormContato
 
+
 # CADASTRAR USUÁRIO
 def register(request):
     if request.method != 'POST':
@@ -92,8 +93,8 @@ def dashboard(request):
     messages.success(request, f'Cadastro de {request.POST.get("nome")} realizado com sucesso.')
     return redirect('dashboard')
 
+
 # REALIZAR LOGout
 def logout(request):
     auth.logout(request)
     return redirect('index')
-

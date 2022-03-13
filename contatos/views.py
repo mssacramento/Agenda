@@ -46,9 +46,8 @@ def busca(request):
     contatos = Contato.objects.annotate(
         nome_completo=campos
     ).filter(
-       Q(nome_completo__icontains=termo) | Q(emailprinc__icontains=termo)
+        Q(nome_completo__icontains=termo) | Q(emailprinc__icontains=termo)
     )
-
 
     paginator = Paginator(contatos, 5)
 
