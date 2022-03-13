@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block titulo %}{{contato.nome}} Busca | {% endblock %}
+
+{%block conteudo%}
+<h1 class="mt-5">{{ contato.nome }} {{ contato.sobrenome }}</h1>
+        {% if contato.foto %}
+            <p>
+              <img src="{{ contato.foto.url }}" style="max-width:250px; height: auto;">
+            </p>
+        {% endif %}
+        <dl>
+          <dt>ID</dt>
+          <dd>{{ contato.id }}</dd>
+
+          <dt>NTE</dt>
+          <dd>{{ contato.nte }}</dd>
+
+          <dt>Gestor</dt>
+          <dd>{{contato.gestor }}</dd>
+
+          <dt>Telefone Principal</dt>
+          <dd>{{ contato.telefoneprinc }}</dd>
+
+          <dt>Telefone Secundario</dt>
+          <dd>{{ contato.telefonesecun }}</dd>
+
+          <dt>E-mail Principal</dt>
+          <dd>{{ contato.emailprinc }}</dd>
+
+          <dt>E-mail Secundario</dt>
+          <dd>{{ contato.emailsecun }}</dd>
+
+          <dt>Data criação</dt>
+          <dd>{{ contato.data_criacao|date:'d/m/y H:i:s' }}</dd>
+
+          <dt>Observação</dt>
+          <dd>{{ contato.observacao }}</dd>
+
+           <dt>Categoria</dt>
+          <dd>{{ contato.categoria }}</dd>
+        </dl>
+{%endblock%}
