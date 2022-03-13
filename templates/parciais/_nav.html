@@ -1,11 +1,36 @@
 {% load static %}
 <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
-    <div class="container">
-      <a class="navbar-brand" href="{% url 'index' %}">Agenda das Unidades Escolares da Bahia | {{user}}</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    </div>
-  </nav>
+<nav class="navbar navbar-expand-lg navbar-red bg-red static-top">
+  <div class="container">
+    <a class="navbar-brand" href="{% url 'index' %}">Agenda das Unidades Escolares da Bahia</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+      aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+
+
+
+<nav class="navbar navbar-light" style="background-color: #f30909;">
+  <!-- Navbar content -->
+
+</nav>
+
+<nav class="navbar navbar-red bg-primary">
+
+  <!-- Navbar content -->
+</nav>
+{% if user.is_authenticated %}
+<a class="btn btn-danger my-2" href="{% url 'logout' %}">Logout | {{user}}</a>
+<a class="btn btn-success my-2" href="{% url 'dashboard' %}">Cadastrar novo contato</a>
+<a class="btn btn-success my-2" href="{% url 'index' %}">Ir para agenda</a>
+{% else %}
+<a class="btn btn-primary my-2" href="{% url 'login' %}">Login</a>
+{% endif %}
+
+
+<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+  <!-- Navbar content -->
+</nav>

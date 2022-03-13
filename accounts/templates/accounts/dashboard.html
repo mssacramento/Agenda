@@ -3,10 +3,12 @@
 {% block titulo %}Dashboard de {{user}} | {% endblock %}
 
 {% block conteudo %}
+
 {% include 'parciais/_messages.html' %}
-<h2 class="mt-3 mb-3">Olá {{ user.first_name}} {{ user.last_name}}</h2>
+
+<h2 class="mt-3 mb-3">Olá, {{user}}</h2>
 <p>
-<br>
+    <br>
 <h4 class="mt-3 mb-3">Cadastro de novo contato na agenda. </h4>
 </p>
 <div class="container">
